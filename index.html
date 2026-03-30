@@ -3,15 +3,16 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Wildfire Risk Mitigation — Multiscale Research</title>
+  <title>Lau Future Climates Grant — Multiscale Wildfire Risk Research</title>
   <link rel="stylesheet" href="css/style.css">
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🔥</text></svg>">
 </head>
 <body>
 
 <nav id="main-nav">
-  <a class="nav-logo" href="#">WRM Lab</a>
-  <ul class="nav-links">
+  <a class="nav-logo" href="#">2025/2026 Lau Future Climates Grant</a>
+  <button class="nav-hamburger" id="navHamburger" aria-label="Toggle menu">&#9776;</button>
+  <ul class="nav-links" id="navLinks">
     <li><a href="#" class="active">Home</a></li>
     <li><a href="pages/01-pyrogeography.html">01 Pyromes</a></li>
     <li><a href="pages/02-fire-weather.html">02 Fire Weather</a></li>
@@ -20,21 +21,21 @@
     <li><a href="pages/05-risk-networks.html">05 Risk Networks</a></li>
     <li><a href="pages/06-responsibility.html">06 Responsibility</a></li>
   </ul>
-  <button class="nav-hamburger" id="navHamburger" aria-label="Toggle menu">&#9776;</button>
 </nav>
 
-<!-- HERO -->
+<!-- HERO with inline-style slideshow -->
 <section class="hero">
-  <div class="hero-slideshow">
-    <div class="slide active" style="background-image: url('images/background1.jpg')"></div>
-    <div class="slide" style="background-image: url('images/background2.jpg')"></div>
-    <div class="slide" style="background-image: url('images/background3.jpg')"></div>
-    <div class="slide" style="background-image: url('images/background4.jpg')"></div>
-    <div class="hero-slideshow-overlay"></div>
+  <!-- Each slide is a full-bleed div; JS cycles the 'active' class -->
+  <div class="hero-slideshow" id="heroSlideshow">
+    <div class="slide active" id="slide0"></div>
+    <div class="slide"        id="slide1"></div>
+    <div class="slide"        id="slide2"></div>
+    <div class="slide"        id="slide3"></div>
+    <div class="hero-overlay"></div>
   </div>
 
   <div class="hero-content">
-    <div class="hero-eyebrow animate-in">Multiscale Wildfire Risk Research · 2025</div>
+    <div class="hero-eyebrow animate-in">Lau Just Climate Futures · UC Berkeley CED · 2025–2026</div>
     <h1 class="animate-in delay-1">
       Multiscale Mitigation of<br>
       <em>Wildfire Risk</em> in the<br>
@@ -60,11 +61,29 @@
     <div class="animate-in delay-4">
       <a href="#projects" class="btn-primary">Explore Research ↓</a>
     </div>
+
+    <!-- Slideshow dots -->
+    <div class="slide-dots" id="slideDots">
+      <span class="dot active" data-index="0"></span>
+      <span class="dot" data-index="1"></span>
+      <span class="dot" data-index="2"></span>
+      <span class="dot" data-index="3"></span>
+    </div>
   </div>
 </section>
 
+<!-- EXHIBITION BANNER -->
+<div class="exhibit-banner">
+  <div class="exhibit-banner-inner">
+    <div class="exhibit-label">Upcoming Exhibition</div>
+    <div class="exhibit-title">The Weather To Come: Forest, City, Fire, Cloud</div>
+    <div class="exhibit-details">Apr 7 – 21, 2026 &nbsp;·&nbsp; Bauer Wurster Gallery, UC Berkeley CED &nbsp;·&nbsp; Opening Reception Apr 7 at 6 PM</div>
+    <a href="https://ced.berkeley.edu/events/just-climate-futures-exhibition" target="_blank" class="exhibit-link">View Exhibition Details →</a>
+  </div>
+</div>
+
 <!-- CONTEXT -->
-<section style="padding: 5rem 2.5rem; border-top: 1px solid rgba(255,255,255,0.06); border-bottom: 1px solid rgba(255,255,255,0.06);">
+<section style="padding: 5rem 2.5rem; border-bottom: 1px solid rgba(255,255,255,0.06);">
   <div style="max-width:1200px; margin:0 auto;">
     <div class="two-col">
       <div>
@@ -76,6 +95,11 @@
           <p>Wildfires represent one of the most dynamic and destructive natural hazards on Earth. Their behavior is shaped by an intricate interplay of climate, ecology, topography, and human settlement — and all of these factors are shifting simultaneously.</p>
           <p>This research program addresses wildfire risk from a <strong style="color:var(--bone)">multiscale perspective</strong>: understanding how global fire regimes are evolving, how synchronous fire weather is expanding hazard windows, how extreme fires emerge in unexpected geographies, how simulations can improve operational response, and how risk is shared and mitigated at the community scale.</p>
           <p>The six projects presented here span from global pyrogeographic analysis using machine learning down to parcel-level responsibility networks for neighborhood fire risk mitigation.</p>
+        </div>
+        <div class="team-block">
+          <div class="team-label">Research Team</div>
+          <div class="team-names">Marta Gonzalez · Maryam Hosseini · John Radke · Minho Kim</div>
+          <div class="team-affil">UC Berkeley College of Environmental Design</div>
         </div>
       </div>
       <div>
@@ -114,7 +138,6 @@
   </div>
 
   <div class="cards-grid">
-
     <a href="pages/01-pyrogeography.html" class="project-card">
       <span class="card-num">01</span>
       <div class="card-scale">🌍 Global Scale · Machine Learning</div>
@@ -162,36 +185,75 @@
       <p class="card-desc">Rethinking defensible spaces as overlapping buffers and developing spatial responsibility networks that quantify shared and owed risk between neighboring parcels.</p>
       <div class="card-arrow">Explore project →</div>
     </a>
-
   </div>
 </section>
 
 <footer>
   <div>
-    <a class="footer-logo" href="#">WRM Lab</a>
-    <div>Multiscale Mitigation of Wildfire Risk in the Natural &amp; Built Environments</div>
+    <a class="footer-logo" href="#">2025/2026 Lau Future Climates Grant</a>
+    <div style="margin-top:0.4rem;">Multiscale Mitigation of Wildfire Risk in the Natural &amp; Built Environments</div>
+    <div style="margin-top:0.25rem; font-size:0.78rem;">Gonzalez · Hosseini · Radke · Kim &nbsp;|&nbsp; UC Berkeley CED</div>
   </div>
-  <div style="text-align:right;">
-    <div>Data: 2002–2025</div>
+  <div style="text-align:right; font-size:0.8rem;">
+    <div><a href="https://ced.berkeley.edu/events/just-climate-futures-exhibition" target="_blank" style="color:var(--fire-red);">Just Climate Futures Exhibition →</a></div>
+    <div style="margin-top:0.4rem; color:var(--ash);">Data: 2002–2025</div>
   </div>
 </footer>
 
 <script>
-// Slideshow
+// ── Slideshow ──────────────────────────────────────────────
+// Dynamically set background images so relative paths resolve
+// correctly regardless of how the page is served.
 (function() {
-  var slides = document.querySelectorAll('.hero-slideshow .slide');
-  if (!slides.length) return;
+  var base = (function() {
+    var scripts = document.getElementsByTagName('script');
+    var loc = window.location.href;
+    // strip filename, keep directory
+    return loc.substring(0, loc.lastIndexOf('/') + 1);
+  })();
+
+  var images = [
+    'images/background1.jpg',
+    'images/background2.jpg',
+    'images/background3.jpg',
+    'images/background4.jpg'
+  ];
+
+  var slides = document.querySelectorAll('#heroSlideshow .slide');
+  var dots   = document.querySelectorAll('#slideDots .dot');
   var current = 0;
-  setInterval(function() {
+
+  // Set background images
+  slides.forEach(function(slide, i) {
+    if (images[i]) {
+      slide.style.backgroundImage = "url('" + images[i] + "')";
+    }
+  });
+
+  function goTo(n) {
     slides[current].classList.remove('active');
-    current = (current + 1) % slides.length;
+    dots[current].classList.remove('active');
+    current = (n + slides.length) % slides.length;
     slides[current].classList.add('active');
-  }, 5000);
+    dots[current].classList.add('active');
+  }
+
+  // Auto-advance every 5s
+  var timer = setInterval(function() { goTo(current + 1); }, 5000);
+
+  // Dot click
+  dots.forEach(function(dot) {
+    dot.addEventListener('click', function() {
+      clearInterval(timer);
+      goTo(parseInt(this.getAttribute('data-index')));
+      timer = setInterval(function() { goTo(current + 1); }, 5000);
+    });
+  });
 })();
 
-// Mobile hamburger
+// ── Mobile nav ─────────────────────────────────────────────
 document.getElementById('navHamburger').addEventListener('click', function() {
-  document.getElementById('main-nav').classList.toggle('nav-open');
+  document.getElementById('navLinks').classList.toggle('open');
 });
 </script>
 </body>
