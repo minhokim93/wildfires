@@ -3,120 +3,213 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>WRM Lab | Wildfire Risk Management</title>
-  
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600;700&display=swap" rel="stylesheet">
-  
+  <title>Wildfire Risk Mitigation — Multiscale Research</title>
   <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🔥</text></svg>">
 </head>
 <body>
 
-  <nav id="main-nav">
-    <a href="index.html" class="nav-logo">Lau_WRM</a>
-    <ul class="nav-links">
-      <li><a href="index.html" class="active">Overview</a></li>
-      <li><a href="#projects">Research</a></li>
-      <li><a href="pages/01-pyrogeography.html">Pyrogeography</a></li>
-      <li><a href="https://github.com/minhokim93/Lau_WRM" target="_blank">Repository</a></li>
-    </ul>
-  </nav>
+<nav id="main-nav">
+  <a class="nav-logo" href="#">WRM Lab</a>
+  <ul class="nav-links"></ul>
+</nav>
 
-  <main>
-    <div class="slider-wrapper animate-in" id="projects">
-      <div class="slides-container" id="slides-container">
-        
-        <div class="slide" id="slide-00">
-          <div class="slide-num-label">/ 00</div>
-          <h2>Research Context</h2>
-          <div class="slide-content">
-            <p>Welcome to the Wildfire Risk Management (WRM) research portal. Our lab investigates global wildfire dynamics, identifying hidden exposure biases and visualizing spatial risk to improve management strategies.</p>
-          </div>
-        </div>
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-slideshow" id="heroSlideshow">
+    <div class="slide active" style="background-image: url('images/background1.jpg')"></div>
+    <div class="slide" style="background-image: url('images/background2.jpg')"></div>
+    <div class="slide" style="background-image: url('images/background3.jpg')"></div>
+    <div class="slide" style="background-image: url('images/background4.jpg')"></div>
+    <div class="hero-slideshow-overlay"></div>
+  </div>
 
-        <div class="slide" id="slide-01">
-          <div class="slide-num-label">/ 01</div>
-          <h2>Pyrogeography</h2>
-          <div class="slide-tags">
-            <span class="tag">Global</span>
-            <span class="tag">Bias Analysis</span>
-          </div>
-          <p class="slide-desc">Mapping hidden biases in human wildfire exposure. We visualize where risk is often overlooked.</p>
-          <a href="pages/01-pyrogeography.html" class="btn-primary">View Results →</a>
-        </div>
-
-        <div class="slide" id="slide-02">
-          <div class="slide-num-label">/ 02</div>
-          <h2>Fire Weather</h2>
-          <div class="slide-tags">
-            <span class="tag">Climatology</span>
-            <span class="tag">Interaction</span>
-          </div>
-          <p class="slide-desc">Analyzing fire weather patterns and their interaction with complex terrain.</p>
-          <a href="pages/02-fire-weather.html" class="btn-primary">View Results →</a>
-        </div>
-
-        <div class="slide" id="slide-03">
-          <div class="slide-num-label">/ 03</div>
-          <h2>Extreme Fires</h2>
-          <div class="slide-tags">
-            <span class="tag">Behavior</span>
-            <span class="tag">Modeling</span>
-          </div>
-          <p class="slide-desc">Understanding the dynamics of large, landscape-altering fire events.</p>
-          <a href="pages/03-extreme-fires.html" class="btn-primary">View Results →</a>
-        </div>
-
-        <div class="slide" id="slide-04">
-          <div class="slide-num-label">/ 04</div>
-          <h2>Simulations</h2>
-          <div class="slide-tags">
-            <span class="tag">Numerical</span>
-            <span class="tag">Real-time</span>
-          </div>
-          <p class="slide-desc">Utilizing powerful simulation engines to predict fire spread in complex environments.</p>
-          <a href="pages/04-simulations.html" class="btn-primary">View Results →</a>
-        </div>
-
-        <div class="slide" id="slide-05">
-          <div class="slide-num-label">/ 05</div>
-          <h2>Risk Networks</h2>
-          <div class="slide-tags">
-            <span class="tag">Connectivity</span>
-            <span class="tag">Policy</span>
-          </div>
-          <p class="slide-desc">Modeling wildfire risk as a dynamic network of interconnected, multi-scale vulnerabilities.</p>
-          <a href="pages/05-risk-networks.html" class="btn-primary">View Results →</a>
-        </div>
-
-        <div class="slide" id="slide-06">
-          <div class="slide-num-label">/ 06</div>
-          <h2>Responsibility</h2>
-          <div class="slide-tags">
-            <span class="tag">Ethics</span>
-            <span class="tag">Adaptation</span>
-          </div>
-          <p class="slide-desc">Exploring ethical frameworks and multi-level responsibility in wildfire risk reduction.</p>
-          <a href="pages/06-responsibility.html" class="btn-primary">View Results →</a>
-        </div>
-
+  <div class="hero-content">
+    <div class="hero-eyebrow animate-in">Multiscale Wildfire Risk Research · 2025</div>
+    <h1 class="animate-in delay-1">
+      Multiscale Mitigation of<br>
+      <em>Wildfire Risk</em> in the<br>
+      Natural &amp; Built Environments
+    </h1>
+    <p class="hero-desc animate-in delay-2">
+      A comprehensive research program examining how wildfire risk emerges, evolves, and can be mitigated — from global pyrogeographic shifts down to the neighborhood and parcel scale.
+    </p>
+    <div class="hero-meta animate-in delay-3">
+      <div class="meta-item">
+        <span class="meta-label">Research Scale</span>
+        <span class="meta-value">Global → Neighborhood</span>
       </div>
+      <div class="meta-item">
+        <span class="meta-label">Period</span>
+        <span class="meta-value">2002 – 2025</span>
+      </div>
+      <div class="meta-item">
+        <span class="meta-label">Methods</span>
+        <span class="meta-value">ML · Remote Sensing · Simulation</span>
+      </div>
+    </div>
+    <div class="animate-in delay-4" style="display:flex; gap:1rem; flex-wrap:wrap;">
+      <a href="#projects" class="btn-primary">Explore Research ↓</a>
+    </div>
+  </div>
+</section>
 
-      <div class="slider-footer">
-        <div class="slider-counter">[ <span id="current-slide-num">00</span> / 06 ]</div>
-        <div class="slider-arrows">
-          <button class="slider-arrow prev" id="slide-arrow-prev" disabled>&#8249;</button>
-          <button class="slider-arrow next" id="slide-arrow-next">&#8250;</button>
+<!-- CONTEXT -->
+<section style="padding: 5rem 2.5rem; border-top: 1px solid rgba(255,255,255,0.06); border-bottom: 1px solid rgba(255,255,255,0.06);">
+  <div style="max-width:1200px; margin:0 auto;">
+    <div class="two-col">
+      <div>
+        <div class="section-header">
+          <span class="section-num">00 —</span>
+          <span class="section-title">Research Context</span>
+        </div>
+        <div class="block-text">
+          <p>Wildfires represent one of the most dynamic and destructive natural hazards on Earth. Their behavior is shaped by an intricate interplay of climate, ecology, topography, and human settlement — and all of these factors are shifting simultaneously.</p>
+          <p>This research program addresses wildfire risk from a <strong style="color:var(--bone)">multiscale perspective</strong>: understanding how global fire regimes are evolving, how synchronous fire weather is expanding hazard windows, how extreme fires emerge in unexpected geographies, how simulations can improve operational response, and how risk is shared and mitigated at the community scale.</p>
+          <p>The six projects presented here span from global pyrogeographic analysis using machine learning down to parcel-level responsibility networks for neighborhood fire risk mitigation.</p>
+        </div>
+      </div>
+      <div>
+        <div class="stats-row" style="grid-template-columns: 1fr 1fr;">
+          <div class="stat-item">
+            <span class="stat-num">6</span>
+            <span class="stat-label">Research Projects</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-num">23yr</span>
+            <span class="stat-label">Fire Data Span</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-num">17.2%</span>
+            <span class="stat-label">Grid Cells Intensifying</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-num">99th</span>
+            <span class="stat-label">Korea Fire Percentile</span>
+          </div>
+        </div>
+        <div class="finding-callout" style="margin-top:1.5rem;">
+          <p>"We're facing a new reality regarding the seasonality of wildfires."</p>
+          <div class="finding-source">— Steve Bowen, Chief Science Officer, Gallagher Re</div>
         </div>
       </div>
     </div>
-  </main>
+  </div>
+</section>
 
-  <footer>
-    <div>WRM Lab | Wildfire Risk Management.</div>
-  </footer>
+<!-- PROJECTS -->
+<section class="projects-section" id="projects">
+  <div class="section-header">
+    <span class="section-num">— </span>
+    <span class="section-title">Six Projects · Global to Local</span>
+  </div>
 
-  <script src="main.js"></script>
+  <div class="cards-grid">
+
+    <a href="pages/01-pyrogeography.html" class="project-card">
+      <span class="card-num">01</span>
+      <div class="card-scale">🌍 Global Scale · Machine Learning</div>
+      <h2 class="card-title">Dynamic Evolution of <em>Pyrogeography</em></h2>
+      <p class="card-desc">Using unsupervised ML on 23 years of satellite fire data to cluster global fire regimes into pyromes and track how they transition and intensify over time.</p>
+      <div class="card-tags">
+        <span class="tag">Clustering</span>
+        <span class="tag">Spatial Autocorrelation</span>
+        <span class="tag">Remote Sensing</span>
+      </div>
+      <div class="card-arrow">Explore project →</div>
+    </a>
+
+    <a href="pages/02-fire-weather.html" class="project-card">
+      <span class="card-num">02</span>
+      <div class="card-scale">🌡️ Global Scale · Climate</div>
+      <h2 class="card-title">Dynamic Evolution of <em>Fire Weather Risk</em></h2>
+      <p class="card-desc">Quantifying synchronous fire weather days (SFW) using the Fire Weather Index and assessing the conditional probability of fire occurrence under extreme weather.</p>
+      <div class="card-tags">
+        <span class="tag">Fire Weather Index</span>
+        <span class="tag">SFW Days</span>
+        <span class="tag">VPD · SPEI</span>
+      </div>
+      <div class="card-arrow">Explore project →</div>
+    </a>
+
+    <a href="pages/03-extreme-fires.html" class="project-card">
+      <span class="card-num">03</span>
+      <div class="card-scale">🇰🇷 Regional Scale · Case Study</div>
+      <h2 class="card-title">Are Extreme Fires <em>Unprecedented or Unexpected?</em></h2>
+      <p class="card-desc">Benchmarking the March 2025 South Korea wildfire — the nation's most destructive — against global fast-fire databases and analyzing the anomalous climate conditions.</p>
+      <div class="card-tags">
+        <span class="tag">Fast Fires</span>
+        <span class="tag">Burn Severity</span>
+        <span class="tag">Climate Anomaly</span>
+      </div>
+      <div class="card-arrow">Explore project →</div>
+    </a>
+
+    <a href="pages/04-simulations.html" class="project-card">
+      <span class="card-num">04</span>
+      <div class="card-scale">🔥 Local Scale · Modeling</div>
+      <h2 class="card-title">Fighting Fires with <em>Wildfire Simulations</em></h2>
+      <p class="card-desc">Coupling Cell2Fire with WindNinja to produce spatially-explicit, downscaled wind fields. Applied to the 2025 Los Angeles Palisades Fire first 32-hour spread.</p>
+      <div class="card-tags">
+        <span class="tag">Cell2Fire</span>
+        <span class="tag">WindNinja</span>
+        <span class="tag">HRRR</span>
+      </div>
+      <div class="card-arrow">Explore project →</div>
+    </a>
+
+    <a href="pages/05-risk-networks.html" class="project-card">
+      <span class="card-num">05</span>
+      <div class="card-scale">🗺️ Operational · Decision Support</div>
+      <h2 class="card-title">Fighting Fires with <em>Fire Potential Risk Networks</em></h2>
+      <p class="card-desc">Automating fire potential polygon (FPP) generation via hydrology-inspired modeling and building suppression strategy networks. Deployed with Catalan Fire Service.</p>
+      <div class="card-tags">
+        <span class="tag">Cell2Fire</span>
+        <span class="tag">FPP Networks</span>
+        <span class="tag">Operational</span>
+      </div>
+      <div class="card-arrow">Explore project →</div>
+    </a>
+
+    <a href="pages/06-responsibility.html" class="project-card">
+      <span class="card-num">06</span>
+      <div class="card-scale">🏘️ Neighborhood Scale · Community</div>
+      <h2 class="card-title">Mitigating Risk as <em>Shared Responsibility</em></h2>
+      <p class="card-desc">Rethinking defensible spaces as overlapping buffers and developing spatial responsibility networks that quantify shared and owed risk between neighboring parcels.</p>
+      <div class="card-tags">
+        <span class="tag">Responsibility Networks</span>
+        <span class="tag">FLAMMAP</span>
+        <span class="tag">Community Planning</span>
+      </div>
+      <div class="card-arrow">Explore project →</div>
+    </a>
+
+  </div>
+</section>
+
+<footer>
+  <div>
+    <a class="footer-logo" href="#">WRM Lab</a>
+    <div>Multiscale Mitigation of Wildfire Risk in the Natural &amp; Built Environments</div>
+  </div>
+  <div style="text-align:right;">
+    <div>Data: 2002–2025</div>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+<script>buildNav('home');</script>
+<script>
+(function() {
+  var slides = document.querySelectorAll('.hero-slideshow .slide');
+  if (!slides.length) return;
+  var current = 0;
+  setInterval(function() {
+    slides[current].classList.remove('active');
+    current = (current + 1) % slides.length;
+    slides[current].classList.add('active');
+  }, 5000);
+})();
+</script>
 </body>
 </html>
