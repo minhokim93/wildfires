@@ -1,55 +1,81 @@
-// Shared navigation and utilities
+/* =========================================
+   WRM Lab - Interactive Slider Logic
+   ========================================= */
 
-const NAV_LINKS = [
-  { href: '../index.html', label: 'Home' },
-  { href: '01-pyrogeography.html', label: '01 Pyromes' },
-  { href: '02-fire-weather.html', label: '02 Fire Weather' },
-  { href: '03-extreme-fires.html', label: '03 Korea 2025' },
-  { href: '04-simulations.html', label: '04 Simulations' },
-  { href: '05-risk-networks.html', label: '05 Risk Networks' },
-  { href: '06-responsibility.html', label: '06 Responsibility' },
-];
+window.addEventListener('load', () => {
+    const slidesContainer = document.getElementById('slides-container');
+    const slide = document.querySelector('.slide');
+    const prevButton = document.getElementById('slide-arrow-prev');
+    const nextButton = document.getElementById('slide-arrow-next');
+    const currentSlideNumSpan = document.getElementById('current-slide-num');
 
-function buildNav(activePage) {
-  const nav = document.getElementById('main-nav');
-  if (!nav) return;
-  
-  const logo = nav.querySelector('.nav-logo');
-  const list = nav.querySelector('.nav-links');
-  if (!list) return;
+    // Basic Slider Setup
+    let currentSlideIndex = 0;
+    const totalSlides = 6; // Slides 00 - 06
 
-  const prefix = activePage === 'home' ? 'pages/' : '';
-  const homeHref = activePage === 'home' ? '#' : '../index.html';
-
-  NAV_LINKS.forEach((link, i) => {
-    const li = document.createElement('li');
-    const a = document.createElement('a');
-    const href = activePage === 'home' ? `pages/${link.href.replace('../', '')}` : link.href;
-    a.href = i === 0 ? homeHref : href;
-    a.textContent = link.label;
-    if ((activePage === 'home' && i === 0) || link.href.includes(activePage)) {
-      a.classList.add('active');
-    }
-    li.appendChild(a);
-    list.appendChild(li);
-  });
-}
-
-// Intersection observer for scroll animations
-document.addEventListener('DOMContentLoaded', () => {
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(el => {
-      if (el.isIntersecting) {
-        el.target.style.animationPlayState = 'running';
-        observer.unobserve(el.target);
-      }
+    // Pre-calculate slide width on load and on resize
+    let slideWidth = slide.clientWidth;
+    window.addEventListener('resize', () => {
+        slideWidth = slide.clientWidth;
     });
-  }, { threshold: 0.1 });
 
-  document.querySelectorAll('.animate-on-scroll').forEach(el => {
-    el.style.opacity = '0';
-    el.style.animationPlayState = 'paused';
-    el.classList.add('animate-in');
-    observer.observe(el);
-  });
+    // Function to handle moving to a specific slide
+    const goToSlide = (index) => {
+        // Handle boundaries
+        if (index < 0) {
+            index = 0;
+        } else if (index > totalSlides) {
+            index = totalSlides;
+        }
+        
+        currentSlideIndex = index;
+        
+        // Use scrollLeft to animate the change
+        // We use scrollLeft instead of translate for best mobile performance
+        slidesContainer.scrollLeft = currentSlideIndex * slideWidth;
+        
+        updateSliderUI(currentSlideIndex);
+    }
+
+    // Function to update the fractional counter and disable arrows at the ends
+    const updateSliderUI = (index) => {
+        // Format the index with a leading zero (e.g., 03)
+        currentSlideNumSpan.innerText = index.toString().padStart(2, '0');
+        
+        // Handle disabling arrows at boundaries
+        prevButton.disabled = (index === 0);
+        nextButton.disabled = (index === totalSlides);
+    }
+
+    // --- Arrow Click Interaction ---
+    nextButton.addEventListener('click', () => {
+        if (currentSlideIndex < totalSlides) {
+            goToSlide(currentSlideIndex + 1);
+        }
+    });
+
+    prevButton.addEventListener('click', () => {
+        if (currentSlideIndex > 0) {
+            goToSlide(currentSlideIndex - 1);
+        }
+    });
+
+    // --- Touch/Native Scroll Interaction ---
+    // Listen to the scroll event to update the counter even when a user scrolls on mobile
+    let isScrolling;
+    slidesContainer.addEventListener('scroll', () => {
+        // Clear timeout so we don't trigger update UI on every pixel of scrolling
+        window.clearTimeout(isScrolling);
+        
+        // Use a slight timeout to calculate the current index AFTER the scroll has snapped
+        isScrolling = setTimeout(() => {
+            // Calculate current index by dividing the current scroll position by width
+            const index = Math.round(slidesContainer.scrollLeft / slideWidth);
+            currentSlideIndex = index;
+            updateSliderUI(currentSlideIndex);
+        }, 100); // 100ms lag is barely noticeable but saves performance
+    }, { passive: true }); // passive increases scroll performance
+
+    // Initialize the UI on page load
+    updateSliderUI(currentSlideIndex);
 });
