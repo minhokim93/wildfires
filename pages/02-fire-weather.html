@@ -181,8 +181,8 @@
       </div>
       <div class="block-text">
         <p><strong style="color:var(--bone)">Synchronous Fire Weather (SFW)</strong> defines concurrent climate extremes or spatially compound events which can significantly intensify hazards and exacerbate impacts. SFW is measured as the average number of days per year where local weather conditions exceed a high-danger threshold.</p>
-        <p>This threshold is derived from a <strong style="color:var(--bone)">40-year baseline climatology</strong> of the Fire Weather Index (FWI) — a composite meteorological metric combining temperature, humidity, wind speed, and drought codes to estimate fire danger.</p>
-        <p>Three severity levels are assessed: severe (FWI90), extreme (FWI95), and catastrophic (FWI99) conditions, based on the 90th, 95th, and 99th percentile of the 40-year baseline at each grid cell.</p>
+        <p>This threshold is derived from a <strong style="color:var(--bone)">30-year baseline climatology</strong> of the Fire Weather Index (FWI) — a composite meteorological metric combining temperature, humidity, wind speed, and drought codes to estimate fire danger.</p>
+        <p>Three severity levels are assessed: severe (FWI90), extreme (FWI95), and catastrophic (FWI99) conditions, based on the 90th, 95th, and 99th percentile of the 30-year baseline at each grid cell.</p>
       </div>
 
       <div class="finding-callout">
@@ -197,10 +197,10 @@
         <span class="block-title">How SFW Days Are Computed</span>
       </div>
       <div class="block-text">
-        <p>For each grid cell, the historical FWI distribution is derived from a 40-year baseline. Each daily FWI value is compared against the baseline threshold (e.g., FWI90). Days exceeding the threshold are counted as SFW days, and averaged per year.</p>
-        <p>A <strong style="color:var(--bone)">synchronicity ratio</strong> is further computed based on SFW per month per pyrome, using a "sync threshold" that determines the proportion of minimum SFW grid cells that must be active simultaneously for the event to be considered synchronous.</p>
+        <p>We focus on a 24-year time period from 2002 to 2025. For each grid cell, the historical FWI distribution is derived from a 30-year baseline (1991-2020). Each daily FWI value is compared against its baseline threshold (e.g., FWI calculated at the 90th percentile). Days exceeding the threshold are counted as "SFW" days and averaged per year to yield an annual average number of days.</p>
+        <!-- <p>A <strong style="color:var(--bone)">synchronicity ratio</strong> is further computed based on SFW per month per pyrome, using a "sync threshold" that determines the proportion of minimum SFW grid cells that must be active simultaneously for the event to be considered synchronous.</p> -->
       </div>
-        <p>SFW can be computed with respect to severe, extreme, and catastrophic thresholds of FWI (FWI90, FWI95, FWI99). The percentile values are determined per grid cell using a 30-year climatology (1991-2020) at 0.25-degree resolution (baseline FWI). Since we measure at each grid cell, we map SFW days globally (e.g., Global map of SFW days for FWI99)</p>
+        <p>SFW can be computed with respect to severe, extreme, and catastrophic thresholds of FWI (FWI90, FWI95, FWI99). The percentile values are determined per grid cell at 0.25-degree resolution (baseline FWI). Since we measure at each grid cell, we map SFW days globally (e.g., Global map of SFW days for FWI at the 99th percentile and FWI is greater than 20)</p>
       <img src="../assets/sfw_concept.png" alt="SFW concept" style="width: 100%; height: auto; display: block; border: none;">
 
       </div>
@@ -209,29 +209,34 @@
     <div class="content-block" id="section-omega">
       <div class="block-header">
         <span class="block-tag">Finding</span>
-        <span class="block-title">Expected Fire Weather Risk</span>
+        <span class="block-title">Fire Weather Risk</span>
       </div>
       <div class="block-text">
-        <p>A new metric called <strong style="color:var(--bone)">Conditional Fire Weather Risk</strong> is computed as the conditional probability (i.e., P(Fire|SFW)) that fire occurs given SFW conditions (under specific FWI percentiles). For instance, the global mean is 0.086, meaning roughly 8.6% of SFW days (under FWI90) see an actual fire occurrence at a given location.</p>
-        <p>This metric is compared with high-resolution global population data (WorldPop) at four-year intervals to assess human exposure to this risk. Countries with high risk and high population density may face disproportionate exposure.</p>
+        <p>Are fires really occurring during SFW days? To answer this question, we compute the conditional probability of fire occurrence given SFW days (FWI at 90, 95, 99 percentiles) when average FWI is greater than specific values (10, 20, 30, 40, 50).</p>
+        <p>We compute fire occurrence by using individual fire perimeters from the Global Fire Atlas (area > 1 sq. km) excluding urban and agricultural areas. Then, for each grid cell, we compare fire occurrences on SFW days over the year to compute this conditional probability metric.</p>
       </div>
-      <div class="plots-grid" style="margin-top:1.5rem;">
-        <div class="plot-card" onclick="window.open('../assets/02_omega_by_country_population.html', '_blank')">
-  <div class="plot-card-preview plot-card-iframe-wrap"><iframe src="../assets/02_omega_by_country_population.html" loading="lazy" scrolling="no" style="width:100%;height:100%;border:none;pointer-events:none;" tabindex="-1"></iframe></div>
+      <!-- <div class="plots-grid" style="margin-top:1.5rem;">
+        <div class="plot-card" onclick="window.open('../assets/02_omega_by_country_population.html', '_blank')"> -->
+  <!-- <div class="plot-card-preview plot-card-iframe-wrap"><iframe src="../assets/02_omega_by_country_population.html" loading="lazy" scrolling="no" style="width:100%;height:100%;border:none;pointer-events:none;" tabindex="-1"></iframe></div>
   <div class="plot-card-body">
     <div class="plot-card-title">Ω by Country Population</div>
     <div class="plot-card-desc">Expected fire weather risk vs. country population (log scale) by continent — identifying high-exposure nations.</div>
     <div class="plot-card-link-row"><a class="plot-card-link" href="../assets/02_omega_by_country_population.html" target="_blank" onclick="event.stopPropagation()">Open in new tab ↗</a><span class="plot-card-link-sep">·</span><span class="plot-card-link plot-card-link-expand">View below ↓</span></div>
-  </div>
-</div>
-        <div class="plot-card" onclick="window.open('../assets/02_population_exposure_by_continent.html', '_blank')">
+  </div> -->
+<!-- </div> -->
+        <!-- <div class="plot-card" onclick="window.open('../assets/02_population_exposure_by_continent.html', '_blank')">
   <div class="plot-card-preview plot-card-iframe-wrap"><iframe src="../assets/02_population_exposure_by_continent.html" loading="lazy" scrolling="no" style="width:100%;height:100%;border:none;pointer-events:none;" tabindex="-1"></iframe></div>
   <div class="plot-card-body">
     <div class="plot-card-title">Population Exposure by Continent</div>
     <div class="plot-card-desc">Annual high-danger days vs. % of grid cells with population, tracked across Africa, Asia, Europe, N. America, Oceania, S. America.</div>
     <div class="plot-card-link-row"><a class="plot-card-link" href="../assets/02_population_exposure_by_continent.html" target="_blank" onclick="event.stopPropagation()">Open in new tab ↗</a><span class="plot-card-link-sep">·</span><span class="plot-card-link plot-card-link-expand">View below ↓</span></div>
   </div>
-</div>
+</div> -->
+  <p>We observe that the average annual SFW days tend to increase globally over time. At higher absolute FWI values, the majority of SFW days occur in the Western US, S. America, Africa, Mediterranean Europe, Australia, and Southeast Asia. At higher FWI percentiles, the number of SFW days decreases indicating a smaller window of opportunity for fire weather conditions to occur.</p>
+    <img src="../assets/sfw_days_fwi_gt.gif" alt="SFW concept" style="width: 100%; height: auto; display: block; border: none;">
+  <p>While SFW days are observed globally, fires do not always occur under SFW days nor in the regions with SFW. Higher probability values are found to be in Africa, S. America, Australia, Southeast Asia, Eastern Europe and Russia. We also observe high probability values in the northern latitudes in N. America and Russia.</p>
+    <img src="../assets/expected_risk_fwi.gif" alt="SFW concept" style="width: 100%; height: auto; display: block; border: none;">
+
       </div>
     </div>
 
