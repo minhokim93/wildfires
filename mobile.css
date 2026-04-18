@@ -322,7 +322,9 @@ img, video, iframe, gif {
 
   /* Expand-height iframes — give them a sensible max on mobile */
   .plot-card-embed-wrap {
-    height: 420px !important;
+    /* height: 420px !important; */
+    height: 65vh !important; /* Uses 65% of the screen height instead of a fixed pixel amount */
+    min-height: 500px !important; /* Ensures it never gets too squished */
   }
 
   .plot-card-iframe-wrap {
@@ -345,7 +347,9 @@ img, video, iframe, gif {
 
 @media (max-width: 480px) {
   .plot-card-embed-wrap {
-    height: 320px !important;
+    /* height: 320px !important; */
+    height: 75vh !important; /* Gives the visualization more vertical room on small phones */
+    min-height: 450px !important;
   }
 }
 
